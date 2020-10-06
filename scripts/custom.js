@@ -26,7 +26,7 @@
     });
 });
 function palindrome() {
-    let userStr = document.getElementById("str").value;
+    let userStr = document.getElementById("str").value.toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]|\s/gi, '');
     let rev = userStr.split('').reverse().join('');
     if (userStr == rev) {
         let resultp = userStr + " is a palindrome";
