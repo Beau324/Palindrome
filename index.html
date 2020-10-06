@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Palindrome Checker</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="shortcut icon" href="images/customIcon.ico" />
+    <link href="content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="content/scrolling-nav.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Palindrome Checker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+            <h1>Welcome to Palindrome Checker</h1>
+            <p class="lead">A palindrome is a word, number, or other sequence of characters which reads the same backward as forward, such as "madam" or "racecar".</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>About this challenge</h2>
+                    <p class="lead">The palindrome checker allows a user to input a string and return whether or not the inputted string is a palindrome.</p>
+                    <ul>
+                        <li>Takes in a user string.</li>
+                        <li>Reverses the user's string.</li>
+                        <li>Checks the reversed string against the original string.</li>
+                        <li>Returns whether or not the inputted string is or is not a palindrome.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-light">
+        <div class="container">
+            <div class=" row">
+                <div class=" col-lg-12 text-center ">
+                    <h3>Palindrome</h3>
+                    <input type="text" id="str" />
+                    <button onclick="palindrome()">palindrome</button>
+                    <span id="resultp"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="row">
+            <div class=" col-xs-12 col-sm-8 offset-sm-1 offset-sm-2">
+                <div class="col-inner ts-20">
+                    <div class="block-title">
+                        <h3>Get in touch with me!</h3>
+                    </div>
+
+                    <form id="contact_form" class="contact-form">
+
+                        <div class="messages"></div>
+
+                        <div class="controls two-columns">
+                            <div class="fields clearfix">
+                                <div class="left-column">
+                                    <div class="form-group form-group-with-icon">
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required="required" data-error="Name is required.">
+                                        <div class="form-control-border"></div>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group form-group-with-icon">
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Email Address" required="required" data-error="Valid email is required.">
+                                        <div class="form-control-border"></div>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <div class="form-group form-group-with-icon">
+                                        <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Subject" required="required" data-error="Subject is required.">
+                                        <div class="form-control-border"></div>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="right-column">
+                                    <div class="form-group form-group-with-icon">
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="7" required="required" data-error="Please, leave me a message."></textarea>
+                                        <div class="form-control-border"></div>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="submit" id="button" class="button btn-send" value="Send message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('user_cWPq5pgSsHexCuqAhcoTE')</script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+    <script src="scripts/custom.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="scripts/jquery.easing.min.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="scripts/scrolling-nav.js"></script>
+    <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('contact_form')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'default_service';
+                const templateID = 'template_ygrg1dn';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+                        Swal.fire(
+                            'Good News!',
+                            'Your Email Was Sent',
+                        )
+                    }, (err) => {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });</script>
+</body>
+
+</html>
