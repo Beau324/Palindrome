@@ -11,7 +11,7 @@
     <title>Palindrome Checker</title>
 
     <!-- Bootstrap core CSS -->
-
+    <link href="content/prism.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/customIcon.ico" />
     <link href="content/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
@@ -24,6 +24,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">Palindrome Checker</a>
+            <a class="btn" href="https://github.com/Beau324/Palindrome" target="_blank"><img src="https://img.icons8.com/windows/32/000000/github.png" /></a>
+            <a class="btn" href="https://beau-cunningham.netlify.app" target="_blank"><img src="https://img.icons8.com/windows/32/000000/developer.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -70,7 +72,848 @@
     <section id="demo" class="bg-light">
         <div class="container">
             <div class=" row">
-                <div class=" col-lg-12 text-center ">
+                <div class="col">
+                    <h2 class="text-center">Technologies Used</h2>
+                    <div class="row">
+                        <div class="card-group">
+                            <div class="card">
+                                <img src="images/javascriptIcon.png" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">Javascript</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#jsModal">Javascript Used</a>
+                                </div>
+                            </div><div class="card">
+                                <img src="images/htmlIcon.png" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">HTML 5</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#htmlModal">HTML5 Used</a>
+                                </div>
+                            </div><div class="card">
+                                <img src="images/css3Icon.png" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">CSS 3</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#cssModal">CSS3 Used</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="jsModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Javascript</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+                            <div class="modal-body">
+<pre>
+    <code class="language-js">
+        $(function () {
+
+        $('#contact_form').validator();
+
+        $('#contact_form').on('submit', function (e) {
+        if (!e.isDefaultPrevented()) {
+        var url = "contact_form/contact_form.php";
+
+        $.ajax({
+        type: "POST",
+        url: url,
+        data: $(this).serialize(),
+        success: function (data) {
+        var messageAlert = 'alert-' + data.type;
+        var messageText = data.message;
+
+        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+        if (messageAlert && messageText) {
+        $('#contact_form').find('.messages').html(alertBox);
+        $('#contact_form')[0].reset();
+        }
+        }
+        });
+        return false;
+        }
+        });
+        });
+        function palindrome() {
+        let userStr = document.getElementById("str").value.toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]|\s/gi, '');
+        let rev = userStr.split('').reverse().join('');
+        if (userStr == rev) {
+        let resultp = userStr + " is a palindrome";
+        document.getElementById("resultp").innerHTML = `<b>${resultp}</b>`;
+        }
+        else {
+        let resultp = userStr + " is not a palindrome";
+        document.getElementById("resultp").innerHTML = `<b>${resultp}</b>`;
+        }
+        }
+    </code>
+</pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="htmlModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-xl">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">HTML</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+                            <div class="modal-body">
+<pre>
+    <code class="language-html">
+        &lt!DOCTYPE html&gt
+        &lthtml lang="en"&gt
+
+        &lthead&gt
+
+        &ltmeta charset="utf-8"&gt
+        &ltmeta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt
+        &ltmeta name="description" content=""&gt
+        &ltmeta name="author" content=""&gt
+
+        &lttitle&gtPalindrome Checker&lt/title&gt
+
+        &lt!-- Bootstrap core CSS --&gt
+        &ltlink href="content/prism.css" rel="stylesheet" /&gt
+        &ltlink rel="shortcut icon" href="images/customIcon.ico" /&gt
+        &ltlink href="content/bootstrap.min.css" rel="stylesheet" /&gt
+        &lt!-- Custom styles for this template --&gt
+        &ltlink href="content/scrolling-nav.css" rel="stylesheet" /&gt
+        &lt/head&gt
+
+        &ltbody id="page-top"&gt
+
+        &lt!-- Navigation --&gt
+        &ltnav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav"&gt
+        &ltdiv class="container"&gt
+        &lta class="navbar-brand js-scroll-trigger" href="#page-top"&gtPalindrome Checker&lt/a&gt
+        &ltbutton class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"&gt
+        &ltspan class="navbar-toggler-icon"&gt&lt/span&gt
+        &lt/button&gt
+        &ltdiv class="collapse navbar-collapse" id="navbarResponsive"&gt
+        &ltul class="navbar-nav ml-auto"&gt
+        &ltli class="nav-item"&gt
+        &lta class="nav-link js-scroll-trigger" href="#about"&gtAbout&lt/a&gt
+        &lt/li&gt
+        &ltli class="nav-item"&gt
+        &lta class="nav-link js-scroll-trigger" href="#demo"&gtDemo&lt/a&gt
+        &lt/li&gt
+        &ltli class="nav-item"&gt
+        &lta class="nav-link js-scroll-trigger" href="#contact"&gtContact&lt/a&gt
+        &lt/li&gt
+        &lt/ul&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/nav&gt
+
+        &ltheader class="bg-primary text-white"&gt
+        &ltdiv class="container text-center"&gt
+        &lth1&gtWelcome to Palindrome Checker&lt/h1&gt
+        &ltp class="lead"&gtA palindrome is a word, number, or other sequence of characters which reads the same backward as forward, such as "madam" or "racecar".&lt/p&gt
+        &lt/div&gt
+        &lt/header&gt
+
+        &ltsection id="about"&gt
+        &ltdiv class="container"&gt
+        &ltdiv class="row"&gt
+        &ltdiv class="col-lg-8 mx-auto"&gt
+        &lth2&gtAbout this challenge&lt/h2&gt
+        &ltp class="lead"&gtThe palindrome checker allows a user to input a string and return whether or not the inputted string is a palindrome.&lt/p&gt
+        &ltul&gt
+        &ltli&gtTakes in a user string.&lt/li&gt
+        &ltli&gtReverses the user's string.&lt/li&gt
+        &ltli&gtChecks the reversed string against the original string.&lt/li&gt
+        &ltli&gtReturns whether or not the inputted string is or is not a palindrome.&lt/li&gt
+        &lt/ul&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/section&gt
+
+        &ltsection id="demo" class="bg-light"&gt
+        &ltdiv class="container"&gt
+        &ltdiv class=" row"&gt
+        &ltdiv class="col"&gt
+        &lth2 class="text-center"&gtTechnologies Used&lt/h2&gt
+        &ltdiv class="row"&gt
+        &ltdiv class="card-group"&gt
+        &ltdiv class="card"&gt
+        &ltimg src="images/javascriptIcon.png" class="card-img-top" alt="..." /&gt
+        &ltdiv class="card-body"&gt
+        &lth5 class="card-title"&gtJavascript&lt/h5&gt
+        &ltp class="card-text"&gtSome quick example text to build on the card title and make up the bulk of the card's content.&lt/p&gt
+        &lta href="#" class="btn btn-primary" data-toggle="modal" data-target="#jsModal"&gtJavascript Used&lt/a&gt
+        &lt/div&gt
+        &lt/div&gt&ltdiv class="card"&gt
+        &ltimg src="images/htmlIcon.png" class="card-img-top" alt="..." /&gt
+        &ltdiv class="card-body"&gt
+        &lth5 class="card-title"&gtHTML 5&lt/h5&gt
+        &ltp class="card-text"&gtSome quick example text to build on the card title and make up the bulk of the card's content.&lt/p&gt
+        &lta href="#" class="btn btn-primary" data-toggle="modal" data-target="#htmlModal"&gtHTML5 Used&lt/a&gt
+        &lt/div&gt
+        &lt/div&gt&ltdiv class="card"&gt
+        &ltimg src="images/css3Icon.png" class="card-img-top" alt="..." /&gt
+        &ltdiv class="card-body"&gt
+        &lth5 class="card-title"&gtCSS 3&lt/h5&gt
+        &ltp class="card-text"&gtSome quick example text to build on the card title and make up the bulk of the card's content.&lt/p&gt
+        &lta href="#" class="btn btn-primary" data-toggle="modal" data-target="#cssModal"&gtCSS3 Used&lt/a&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &ltdiv id="jsModal" class="modal fade" role="dialog"&gt
+        &ltdiv class="modal-dialog"&gt
+
+        &lt!-- Modal content--&gt
+        &ltdiv class="modal-content"&gt
+        &ltdiv class="modal-header"&gt
+        &ltbutton type="button" class="close" data-dismiss="modal"&gt&times;&lt/button&gt
+        &lth4 class="modal-title"&gtModal Header&lt/h4&gt
+        &lt/div&gt
+        &ltdiv class="modal-body"&gt
+        &ltpre&gt
+        &ltcode class="language-js"&gt
+        $(function () {
+
+        $('#contact_form').validator();
+
+        $('#contact_form').on('submit', function (e) {
+        if (!e.isDefaultPrevented()) {
+        var url = "contact_form/contact_form.php";
+
+        $.ajax({
+        type: "POST",
+        url: url,
+        data: $(this).serialize(),
+        success: function (data) {
+        var messageAlert = 'alert-' + data.type;
+        var messageText = data.message;
+
+        var alertBox = '&ltdiv class="alert ' + messageAlert + ' alert-dismissable"&gt&ltbutton type="button" class="close" data-dismiss="alert" aria-hidden="true"&gt&times;&lt/button&gt' + messageText + '&lt/div&gt';
+        if (messageAlert && messageText) {
+        $('#contact_form').find('.messages').html(alertBox);
+        $('#contact_form')[0].reset();
+        }
+        }
+        });
+        return false;
+        }
+        });
+        });
+        function palindrome() {
+        let userStr = document.getElementById("str").value.toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.&lt&gt\{\}\[\]\\\/]|\s/gi, '');
+        let rev = userStr.split('').reverse().join('');
+        if (userStr == rev) {
+        let resultp = userStr + " is a palindrome";
+        document.getElementById("resultp").innerHTML = `&ltb&gt${resultp}&lt/b&gt`;
+        }
+        else {
+        let resultp = userStr + " is not a palindrome";
+        document.getElementById("resultp").innerHTML = `&ltb&gt${resultp}&lt/b&gt`;
+        }
+        }
+        &lt/code&gt
+        &lt/pre&gt
+        &lt/div&gt
+        &ltdiv class="modal-footer"&gt
+        &ltbutton type="button" class="btn btn-default" data-dismiss="modal"&gtClose&lt/button&gt
+        &lt/div&gt
+        &lt/div&gt
+
+        &lt/div&gt
+        &lt/div&gt
+        &ltdiv id="htmlModal" class="modal fade" role="dialog"&gt
+        &ltdiv class="modal-dialog"&gt
+
+        &lt!-- Modal content--&gt
+        &ltdiv class="modal-content"&gt
+        &ltdiv class="modal-header"&gt
+        &ltbutton type="button" class="close" data-dismiss="modal"&gt&times;&lt/button&gt
+        &lth4 class="modal-title"&gtModal Header&lt/h4&gt
+        &lt/div&gt
+        &ltdiv class="modal-body"&gt
+        &ltpre&gt
+        &ltcode class="language-html"&gt
+
+        &lt/code&gt
+        &lt/pre&gt
+        &lt/div&gt
+        &ltdiv class="modal-footer"&gt
+        &ltbutton type="button" class="btn btn-default" data-dismiss="modal"&gtClose&lt/button&gt
+        &lt/div&gt
+        &lt/div&gt
+
+        &lt/div&gt
+        &lt/div&gt
+        &ltdiv id="cssModal" class="modal fade" role="dialog"&gt
+        &ltdiv class="modal-dialog"&gt
+
+        &lt!-- Modal content--&gt
+        &ltdiv class="modal-content"&gt
+        &ltdiv class="modal-header"&gt
+        &ltbutton type="button" class="close" data-dismiss="modal"&gt&times;&lt/button&gt
+        &lth4 class="modal-title"&gtModal Header&lt/h4&gt
+        &lt/div&gt
+        &ltdiv class="modal-body"&gt
+        &ltpre&gt
+        &ltcode class="language-css"&gt
+        /* PrismJS 1.21.0
+        https://prismjs.com/download.html#themes=prism-solarizedlight&languages=markup+css+clike+javascript&plugins=line-numbers */
+        /*
+        Solarized Color Schemes originally by Ethan Schoonover
+        http://ethanschoonover.com/solarized
+
+        Ported for PrismJS by Hector Matos
+        Website: https://krakendev.io
+        Twitter Handle: https://twitter.com/allonsykraken)
+        */
+
+        /*
+        SOLARIZED HEX
+        --------- -------
+        base03    #002b36
+        base02    #073642
+        base01    #586e75
+        base00    #657b83
+        base0     #839496
+        base1     #93a1a1
+        base2     #eee8d5
+        base3     #fdf6e3
+        yellow    #b58900
+        orange    #cb4b16
+        red       #dc322f
+        magenta   #d33682
+        violet    #6c71c4
+        blue      #268bd2
+        cyan      #2aa198
+        green     #859900
+        */
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+        color: #657b83; /* base00 */
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 1em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        }
+
+        pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+        code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        background: #073642; /* base02 */
+        }
+
+        pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+        code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        background: #073642; /* base02 */
+        }
+
+        /* Code blocks */
+        pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+        }
+
+        :not(pre) &gt code[class*="language-"],
+        pre[class*="language-"] {
+        background-color: #fdf6e3; /* base3 */
+        }
+
+        /* Inline code */
+        :not(pre) &gt code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+        color: #93a1a1; /* base1 */
+        }
+
+        .token.punctuation {
+        color: #586e75; /* base01 */
+        }
+
+        .token.namespace {
+        opacity: .7;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+        color: #268bd2; /* blue */
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.url,
+        .token.inserted {
+        color: #2aa198; /* cyan */
+        }
+
+        .token.entity {
+        color: #657b83; /* base00 */
+        background: #eee8d5; /* base2 */
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+        color: #859900; /* green */
+        }
+
+        .token.function,
+        .token.class-name {
+        color: #b58900; /* yellow */
+        }
+
+        .token.regex,
+        .token.important,
+        .token.variable {
+        color: #cb4b16; /* orange */
+        }
+
+        .token.important,
+        .token.bold {
+        font-weight: bold;
+        }
+        .token.italic {
+        font-style: italic;
+        }
+
+        .token.entity {
+        cursor: help;
+        }
+
+        pre[class*="language-"].line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+        }
+
+        pre[class*="language-"].line-numbers &gt code {
+        position: relative;
+        white-space: inherit;
+        }
+
+        .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em; /* works for line-numbers below 1000 lines */
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        }
+
+        .line-numbers-rows &gt span {
+        display: block;
+        counter-increment: linenumber;
+        }
+
+        .line-numbers-rows &gt span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+        }
+
+
+        &lt/code&gt
+        &lt/pre&gt
+        &lt/div&gt
+        &ltdiv class="modal-footer"&gt
+        &ltbutton type="button" class="btn btn-default" data-dismiss="modal"&gtClose&lt/button&gt
+        &lt/div&gt
+        &lt/div&gt
+
+        &lt/div&gt
+        &lt/div&gt
+        &ltdiv class=" col-3 offset-1 text-center "&gt
+        &lth3&gtPalindrome&lt/h3&gt
+        &ltinput type="text" id="str" /&gt
+        &ltbutton class="btn-warning" onclick="palindrome()"&gtpalindrome&lt/button&gt
+        &ltspan id="resultp"&gt&lt/span&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/section&gt
+
+        &ltsection id="contact"&gt
+        &ltdiv class="row"&gt
+        &ltdiv class=" col-xs-12 col-sm-8 offset-sm-1 offset-sm-2"&gt
+        &ltdiv class="col-inner ts-20"&gt
+        &ltdiv class="block-title"&gt
+        &lth3&gtGet in touch with me!&lt/h3&gt
+        &lt/div&gt
+
+        &ltform id="contact_form" class="contact-form"&gt
+
+        &ltdiv class="messages"&gt&lt/div&gt
+
+        &ltdiv class="controls two-columns"&gt
+        &ltdiv class="fields clearfix"&gt
+        &ltdiv class="left-column"&gt
+        &ltdiv class="form-group form-group-with-icon"&gt
+        &ltinput id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required="required" data-error="Name is required."&gt
+        &ltdiv class="form-control-border"&gt&lt/div&gt
+        &ltdiv class="help-block with-errors"&gt&lt/div&gt
+        &lt/div&gt
+
+        &ltdiv class="form-group form-group-with-icon"&gt
+        &ltinput id="form_email" type="email" name="email" class="form-control" placeholder="Email Address" required="required" data-error="Valid email is required."&gt
+        &ltdiv class="form-control-border"&gt&lt/div&gt
+        &ltdiv class="help-block with-errors"&gt&lt/div&gt
+        &lt/div&gt
+
+        &ltdiv class="form-group form-group-with-icon"&gt
+        &ltinput id="form_subject" type="text" name="subject" class="form-control" placeholder="Subject" required="required" data-error="Subject is required."&gt
+        &ltdiv class="form-control-border"&gt&lt/div&gt
+        &ltdiv class="help-block with-errors"&gt&lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &ltdiv class="right-column"&gt
+        &ltdiv class="form-group form-group-with-icon"&gt
+        &lttextarea id="form_message" name="message" class="form-control" placeholder="Message" rows="7" required="required" data-error="Please, leave me a message."&gt&lt/textarea&gt
+        &ltdiv class="form-control-border"&gt&lt/div&gt
+        &ltdiv class="help-block with-errors"&gt&lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+
+        &ltinput type="submit" id="button" class="button btn-send" value="Send message"&gt
+        &lt/div&gt
+        &lt/form&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/div&gt
+        &lt/section&gt
+
+        &lt!-- Footer --&gt
+        &ltfooter class="py-5 bg-dark"&gt
+        &ltdiv class="container"&gt
+        &ltp class="m-0 text-center text-white"&gtBeau Cunningham &copy; Palindrome 2020&lt/p&gt
+        &lt/div&gt
+        &lt!-- /.container --&gt
+        &lt/footer&gt
+        &ltscript src="scripts/prism.js"&gt&lt/script&gt
+        &ltscript src="https://cdn.jsdelivr.net/npm/sweetalert2@10"&gt&lt/script&gt
+        &ltscript type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"&gt&lt/script&gt
+        &ltscript type="text/javascript"&gtemailjs.init('user_cWPq5pgSsHexCuqAhcoTE')&lt/script&gt
+        &lt!-- Bootstrap core JavaScript --&gt
+        &ltscript src="scripts/jquery.min.js"&gt&lt/script&gt
+        &ltscript src="scripts/bootstrap.bundle.min.js"&gt&lt/script&gt
+        &ltscript src="scripts/custom.js"&gt&lt/script&gt
+        &lt!-- Plugin JavaScript --&gt
+        &ltscript src="scripts/jquery.easing.min.js"&gt&lt/script&gt
+        &lt!-- Custom JavaScript for this theme --&gt
+        &ltscript src="scripts/scrolling-nav.js"&gt&lt/script&gt
+        &ltscript&gt
+        const btn = document.getElementById('button');
+
+        document.getElementById('contact_form')
+        .addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        btn.value = 'Sending...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_ygrg1dn';
+
+        emailjs.sendForm(serviceID, templateID, this)
+        .then(() =&gt {
+        btn.value = 'Send Email';
+        Swal.fire(
+        'Good News!',
+        'Your Email Was Sent',
+        )
+        }, (err) =&gt {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+        });
+        });&lt/script&gt
+        &lt/body&gt
+
+        &lt/html&gt
+
+    </code>
+</pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="cssModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-xl">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">CSS</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+                            <div class="modal-body">
+<pre>
+    <code class="language-css">
+        /* PrismJS 1.21.0
+        https://prismjs.com/download.html#themes=prism-solarizedlight&languages=markup+css+clike+javascript&plugins=line-numbers */
+        /*
+        Solarized Color Schemes originally by Ethan Schoonover
+        http://ethanschoonover.com/solarized
+
+        Ported for PrismJS by Hector Matos
+        Website: https://krakendev.io
+        Twitter Handle: https://twitter.com/allonsykraken)
+        */
+
+        /*
+        SOLARIZED HEX
+        --------- -------
+        base03    #002b36
+        base02    #073642
+        base01    #586e75
+        base00    #657b83
+        base0     #839496
+        base1     #93a1a1
+        base2     #eee8d5
+        base3     #fdf6e3
+        yellow    #b58900
+        orange    #cb4b16
+        red       #dc322f
+        magenta   #d33682
+        violet    #6c71c4
+        blue      #268bd2
+        cyan      #2aa198
+        green     #859900
+        */
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+        color: #657b83; /* base00 */
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 1em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        }
+
+        pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+        code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        background: #073642; /* base02 */
+        }
+
+        pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+        code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        background: #073642; /* base02 */
+        }
+
+        /* Code blocks */
+        pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+        }
+
+        :not(pre) > code[class*="language-"],
+        pre[class*="language-"] {
+        background-color: #fdf6e3; /* base3 */
+        }
+
+        /* Inline code */
+        :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+        color: #93a1a1; /* base1 */
+        }
+
+        .token.punctuation {
+        color: #586e75; /* base01 */
+        }
+
+        .token.namespace {
+        opacity: .7;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+        color: #268bd2; /* blue */
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.url,
+        .token.inserted {
+        color: #2aa198; /* cyan */
+        }
+
+        .token.entity {
+        color: #657b83; /* base00 */
+        background: #eee8d5; /* base2 */
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+        color: #859900; /* green */
+        }
+
+        .token.function,
+        .token.class-name {
+        color: #b58900; /* yellow */
+        }
+
+        .token.regex,
+        .token.important,
+        .token.variable {
+        color: #cb4b16; /* orange */
+        }
+
+        .token.important,
+        .token.bold {
+        font-weight: bold;
+        }
+        .token.italic {
+        font-style: italic;
+        }
+
+        .token.entity {
+        cursor: help;
+        }
+
+        pre[class*="language-"].line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+        }
+
+        pre[class*="language-"].line-numbers > code {
+        position: relative;
+        white-space: inherit;
+        }
+
+        .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em; /* works for line-numbers below 1000 lines */
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        }
+
+        .line-numbers-rows > span {
+        display: block;
+        counter-increment: linenumber;
+        }
+
+        .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+        }
+
+
+    </code>
+</pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class=" col-3 offset-1 text-center ">
                     <h3>Palindrome</h3>
                     <input type="text" id="str" />
                     <button class="btn-warning" onclick="palindrome()">palindrome</button>
@@ -137,7 +980,7 @@
         </div>
         <!-- /.container -->
     </footer>
-
+    <script src="scripts/prism.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">emailjs.init('user_cWPq5pgSsHexCuqAhcoTE')</script>
