@@ -113,7 +113,7 @@
                             </div>
                             <div class="modal-body">
 <pre>
-    <code class="language-js">
+                                <code class="language-js">
         $(function () {
 
         $('#contact_form').validator();
@@ -175,7 +175,7 @@
                             </div>
                             <div class="modal-body">
 <pre>
-    <code class="language-html">
+                                <code class="language-html">
         &lt!DOCTYPE html&gt
         &lthtml lang="en"&gt
 
@@ -707,7 +707,7 @@
                             </div>
                             <div class="modal-body">
 <pre>
-    <code class="language-css">
+                                <code class="language-css">
         /* PrismJS 1.21.0
         https://prismjs.com/download.html#themes=prism-solarizedlight&languages=markup+css+clike+javascript&plugins=line-numbers */
         /*
@@ -914,15 +914,33 @@
                     </div>
                 </div>
                 <div class=" col-3 offset-1 text-center ">
-                    <h3>Palindrome</h3>
+                    <h1>Palindrome</h1>
                     <input type="text" id="str" />
-                    <button class="btn-warning" onclick="palindrome()">palindrome</button>
-                    <span id="resultp"></span>
+                    <button class="btn-warning btn-lg" data-toggle="modal" data-target="#resultModal" onclick="palindrome()">palindrome</button>
                 </div>
             </div>
         </div>
     </section>
+    <div id="resultModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg text-center">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Result</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <span id="resultp"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <section id="contact">
         <div class="row">
             <div class=" col-xs-12 col-sm-8 offset-sm-1 offset-sm-2">
